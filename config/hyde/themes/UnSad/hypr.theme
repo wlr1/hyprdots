@@ -1,0 +1,46 @@
+$HOME/.config/hypr/themes/theme.conf|> $HOME/.config/hypr/themes/colors.conf
+#  P̳r̳a̳s̳a̳n̳t̳h̳ R̳a̳n̳g̳a̳n̳
+
+$GTK_THEME = Tokyo-Night
+$ICON_THEME = Tela-circle-dracula
+$COLOR_SCHEME = prefer-dark
+
+# Optional: The varibles above will be set automatically when the theme is loaded
+# This exec commands will soon be deprecated
+
+exec = gsettings set org.gnome.desktop.interface icon-theme $ICON_THEME
+exec = gsettings set org.gnome.desktop.interface gtk-theme $GTK_THEME
+exec = gsettings set org.gnome.desktop.interface color-scheme $COLOR_SCHEME
+
+general {
+    gaps_in = 3
+    gaps_out = 1
+    border_size = 1
+    col.active_border = rgba(2e4f47ff) rgba(5a8a82ff) 45deg
+    col.inactive_border = rgba(1e2f2aff)
+    layout = dwindle
+    resize_on_border = true
+}
+
+group {
+    col.border_active = rgba(2a4540ff) rgba(4f7a73ff) 45deg
+    col.border_inactive = rgba(1a2a27ff)
+    col.border_locked_active = rgba(2f524aff)
+    col.border_locked_inactive = rgba(1c312cff)
+}
+
+decoration {
+    rounding = 7
+    shadow:enabled = false
+
+    blur {
+        enabled = yes
+        size = 4
+        passes = 2
+        new_optimizations = on
+        ignore_opacity = on
+        xray = false
+    }
+}
+
+layerrule = unset,waybar
